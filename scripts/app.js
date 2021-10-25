@@ -15,16 +15,24 @@ $('.customer-list').slick({
 const menuBtn = document.querySelector('.js-menu-btn');
 const menu = document.querySelector('.js-menu');
 const mobileOverlay = document.querySelector('.js-mobile-overlay');
+const menuLinks = document.querySelectorAll('.js-menu-link');
 const activeClass = 'is-show';
+
+function closeMenu() {
+  menu.classList.remove(activeClass);
+  mobileOverlay.style.display = 'none';
+}
 
 menuBtn.addEventListener("click", function () {
   menu.classList.toggle(activeClass);
   mobileOverlay.style.display = 'block';
 });
-mobileOverlay.addEventListener('click', function(){
-  menu.classList.remove(activeClass);
-  mobileOverlay.style.display = 'none';
-})
+
+for (const menuLink of menuLinks) {
+  menuLink.addEventListener('click', closeMenu)
+}
+
+mobileOverlay.addEventListener('click', closeMenu )
 menu.addEventListener('click', function(e) {
   e.stopPropagation()
 });;
