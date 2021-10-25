@@ -853,8 +853,8 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateX(0);
   }
 
-  .menu-item {
-    padding: 20px 0;
+  .menu-link {
+    padding: 20px;
     width: 100%;
   }
 
