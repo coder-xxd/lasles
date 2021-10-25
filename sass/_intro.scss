@@ -30,6 +30,9 @@
 }
 
 @media screen and (max-width: 767px) {
+    .intro {
+        margin-bottom: 60px;
+    }
     .intro-container {
         grid-template-columns: 100%;
         gap: 45px 0;
