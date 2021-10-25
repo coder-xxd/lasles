@@ -1,0 +1,119 @@
+* {
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: $font;
+    font-weight: 400;
+    color: $text-color;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+input {
+    line-height: normal;
+}
+section[id] {
+    scroll-margin-top: 10px;
+}
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+// Button CSS
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+@mixin shadowBtn($blur) {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    
+    width: 90%;
+    height: 100%;
+    background: rgba(245, 56, 56, 0.35);
+    filter: blur($blur);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 45px;
+
+    font-family: $font;
+    font-weight: 500;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 1;
+    color: #fff;
+
+    border-radius: 100rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &--primary {
+        padding: 13px 63px;
+        font-weight: 700;
+        background-color: $primary-color;
+        border-radius: 50px;
+    }
+    &--outline {
+        color: $primary-color;
+        background-color: transparent;
+        border: 1px solid;
+        position: relative;
+        &:hover {
+            background-color: $primary-color;
+            color: #fff;
+            .btn--outline::after {
+                @include shadowBtn(114px);
+            }
+        }
+    }
+    &--rounded {
+        position: relative;
+        padding: 17px 65px;
+        border-radius: 10px;
+        &::after {
+            @include shadowBtn(54px);
+        }
+    }
+}
+// Container Box
+.container-box {
+    padding: 37px 0;
+    min-height: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 42px 114px rgba(13, 16, 37, 0.062);
+}
+
+@media screen and (max-width: 1024px) {
+ .btn {
+    padding: 17px 65px;
+    font-size: 1.8rem;
+    &--rounded {
+        padding: 25px 60px;
+    }
+    &--outline {
+        padding: 17px 38px;
+    }
+ }
+}
+
+
+
