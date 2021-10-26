@@ -57,7 +57,7 @@ input {
 }
 
 section[id] {
-  scroll-margin-top: 10px;
+  scroll-margin-top: 110px;
 }
 
 .wrapper {
@@ -258,7 +258,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     left: 0;
     z-index: 90;
-    padding: 20px 0;
+    padding: 30px 0;
     background-color: #fff;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
@@ -269,6 +269,11 @@ h1, h2, h3, h4, h5, h6 {
 
   .header-auth {
     display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 20px 0;
   }
 }
 .hero {
@@ -309,7 +314,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (max-width: 1023px) {
   .hero {
-    margin-top: 117px;
+    margin-top: 110px;
   }
   .hero-heading {
     font-size: 3.5rem;
